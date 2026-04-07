@@ -43,9 +43,11 @@ npm run build
 * **Lucide Icons** - 开源图标库
 * **AI 绘图引擎** - 概念插图生成
 
-## 💡 终极复刻咒语 (Prompt)
+## 💡 附录：自动化构建提示词 (System Prompt)
 
-如果你也想“零门槛”让支持工具调用的 AI 智能体（如 Github Copilot, Cursor, Gemini 等）为你确定性地生成一套同等水准、不跑偏的学术级 Slidev 演示文稿，你可以直接新建一个空目录，然后向 AI 发送以下这套经过“龙虾大战”实战检验的工程提示词：
+如需在本地使用 AI 工作流（如 Github Copilot, Cursor, Gemini 等）复现相似风格的 Slidev 演示文稿，建议在新建目录后，向 AI 发送以下系统提示词。
+
+该提示词主要精简了冗余的视觉修饰，并以工程规范约束了布局逻辑，从而提高代码产出的确定性：
 
 <details>
 <summary><strong>点击展开：Slidev 演示文稿全自动生成 Prompt</strong></summary>
