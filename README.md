@@ -1,44 +1,44 @@
-# AI Agent Workflow Presentation (2026) 🦞
+# AI 智能体科研工作流演示 (2026) 🦞
 
-A premium, highly-polished Slidev presentation exploring the bleeding edge of AI Agents, IDE integration, OS-level Control, and the famous 2026 "Lobster War" (OpenClaw ecosystem). 
+这是一个基于 Slidev 的高品质学术级幻灯片，旨在探讨 2026 年最前沿的 AI 代理（Agents）、IDE 深度集成、OS 级系统控制，以及著名的“龙虾大战”（以 OpenClaw 为代表的桌面级代理混战生态）。
 
-Originally designed for an academic and professional audience, this presentation breaks down the transition from conversational limitations (linear workflows) to true executive agentic loops.
+本演示文稿专为具有科研及工程开发背景的高阶受众设计，层层解析 AI 行业如何从“受限的对话式框架”迈向“真正的自主闭环执行体系”。
 
-## 🌐 View Online
+## 🤖 AI 联合研发署名
 
-This presentation auto-deploys via GitHub Pages. You can view the live interactive slides here:
+> **备注：** 本演示文稿的诞生是一场真正的 AI 科研工程实验。从大纲解构、正文撰写、Slidev 组件代码排版、前端 UI 美化定制，再到每一页极客风格的概念原画生成和历史数据对齐，**其全生命周期的执行流皆由纯自动化的 AI 程序员代理（Antigravity）独立编写生成。** 人类引导者仅担任高维度的设计输入，提供审稿与纠偏指导。
 
-👉 **[View Full Presentation](https://l1veIn.github.io/ai-agent-presentation-2026/)**
+## 🌐 在线观看
 
-## 🤖 AI Co-Creation Credits
+该项目代码仓库已接入 GitHub Actions，能够随提交自动更新并部署到静态页面。你可以随时直接点击下方的链接查阅在线成品：
 
-> **Note:** The entire lifecycle of this presentation—including the structural outline, content writing, slidev layout coding, aesthetic styling, data verification, and generation of original graphic illustrations—was meticulously completed by an autonomous AI developer agent (Antigravity).
+👉 **[点击这里在线观看完整版演示](https://l1veIn.github.io/ai-agent-presentation-2026/)**
 
-## 💻 Run Locally
+## 💻 本地编辑与演示
 
-To run this Slidev presentation locally for development, editing, or offline presenting:
+如果您需要将此源码克隆到本机进行二次开发、修饰或离线讲座：
 
 ```bash
-# 1. Install dependencies
+# 1. 下载全量代码后，安装依赖
 npm install
 
-# 2. Start the local server
+# 2. 启动本地实用的热更新预览服务
 npm run dev
 ```
 
-Then visit `http://localhost:3030` in your web browser.
+运行成功后，直接在浏览器中打开 `http://localhost:3030` 即可边改边看。
 
-## 📦 Build for Production
+## 📦 导出至生产环境
 
-If you want to export the presentation as a static single-page application (SPA):
+如果您需要将定稿打包为不带依赖的静态单页面应用（SPA）进行存档：
 
 ```bash
 npm run build
 ```
 
-## 🛠️ Stack & Aesthetic
+## 🛠️ 核心架构与美学基础
 
-* **[Slidev](https://sli.dev/)** - The core presentation framework for developers.
-* **Tailwind CSS** - Minimalist, dark-slate visual identity and academic typography.
-* **Lucide Icons** - Clean and consistent professional vector icons.
-* Custom Generated AI Graphics.
+* **[Slidev](https://sli.dev/)** - 为开发者量身定做的现代 Markdown 幻灯片渲染及构建引擎。
+* **Tailwind CSS** - 提供像素级极简主义控制、低饱和度色系与高度克制的学术排印。
+* **Lucide Icons** - 贯穿全篇、取代 Emoji 的高质量工程矢量图标组件。
+* **原生 AI 原画引擎** - 自动渲染赛博朋克系统流概念、并实现纯静态横幅输出。
