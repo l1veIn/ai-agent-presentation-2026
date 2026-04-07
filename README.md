@@ -10,6 +10,10 @@ This presentation auto-deploys via GitHub Pages. You can view the live interacti
 
 👉 **[View Full Presentation](https://l1veIn.github.io/ai-agent-presentation-2026/)**
 
+## 🤖 AI Co-Creation Credits
+
+> **Note:** The entire lifecycle of this presentation—including the structural outline, content writing, slidev layout coding, aesthetic styling, data verification, and generation of original graphic illustrations—was meticulously completed by an autonomous AI developer agent (Antigravity).
+
 ## 💻 Run Locally
 
 To run this Slidev presentation locally for development, editing, or offline presenting:
