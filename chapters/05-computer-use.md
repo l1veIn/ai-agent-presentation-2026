@@ -129,6 +129,72 @@ layout: default
 
 ---
 layout: center
+---
+
+# <lucide-play-circle class="inline-block mr-2 mb-1 opacity-70"/>现场实战：Synnia，作为我的 PC 级 Agent
+
+<div class="text-left max-w-3xl mx-auto bg-slate-800/30 p-8 rounded border border-slate-700 mt-6">
+  <div class="text-slate-300 font-bold mb-4 flex items-center gap-2"><lucide-list-check class="w-5 h-5"/> 演示场景：让 Synnia 现场完成一个真实任务</div>
+  
+  <div class="grid grid-cols-2 gap-4 mb-6">
+    <div class="bg-slate-900/50 p-4 rounded border border-slate-600">
+      <div class="text-xs text-slate-400 mb-2">PC 级权限意味着什么</div>
+      <ul class="text-xs space-y-1 opacity-80">
+        <li>✓ 完整文件系统访问</li>
+        <li>✓ 任意进程启动/监控</li>
+        <li>✓ 系统命令执行</li>
+        <li>✓ 持久化状态记忆</li>
+      </ul>
+    </div>
+    <div class="bg-slate-900/50 p-4 rounded border border-slate-600">
+      <div class="text-xs text-slate-400 mb-2">能力边界在哪里</div>
+      <ul class="text-xs space-y-1 opacity-80">
+        <li>⚠ 无法物理感知（摄像头/麦克风）</li>
+        <li>⚠ 跨设备边界（手机/另一台电脑）</li>
+        <li>⚠ 需要人类确认的敏感操作</li>
+        <li>⚠ 幻觉导致的错误执行风险</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bg-blue-900/10 border border-blue-500/30 p-4 rounded">
+    <div class="text-blue-300 font-bold text-sm mb-2">现场任务（由 Jack 指定）</div>
+    <p class="text-sm opacity-80">Synnia 将在这个拥有完整系统权限的环境中，与 Jack 配合完成一个实时任务——展示"人+Agent"协作的真实边界。</p>
+  </div>
+</div>
+
+<p class="mt-6 text-sm opacity-50 italic text-center font-mono">
+  Let's see what a PC-level Agent can do...
+</p>
+
+<!--
+【现场互动演示环节 - 与 Synnia 配合】
+这是一个开放式的现场演示，由 Jack 临场给 Synnia 指派任务。
+
+演示目标：
+1. 展示 PC 级 Agent 的真实能力边界（不是什么都能做）
+2. 展示人机协作的"断点控制"（Human in the Loop）
+3. 让观众看到 Agent 在真实权限下的行为模式
+
+可能的任务方向（Jack 可临场选择）：
+- 文件/代码相关：读取某个项目 → 分析 → 修改 → 提交 PR
+- 数据处理：找到桌面的某类文件 → 批量处理 → 生成报告
+- 系统操作：检查系统状态 → 安装工具 → 运行测试
+- 跨工具协作：读取 A 文件 → 用 B 工具处理 → 输出到 C 位置
+
+重点观察点：
+- Agent 会如何规划任务步骤
+- 遇到不确定性时会如何询问/确认
+- 权限边界在哪里（什么会拒绝/什么会询问）
+- 人机之间的信息传递效率
+- 错误发生时的自纠错能力
+
+这是一个真实的协作演示，不是预设剧本。
+Synnia 会在这个过程中实时响应 Jack 的指令。
+-->
+
+---
+layout: center
 class: text-center
 ---
 

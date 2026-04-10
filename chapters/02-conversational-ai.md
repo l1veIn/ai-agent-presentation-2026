@@ -185,3 +185,30 @@ class: text-center
 因为它是"开环"的。
 引出下一章 IDE AI。
 -->
+
+---
+layout: center
+---
+
+<div class="w-[50vw] h-[50vh] -mt-4 -mx-4" style="margin: -16px;">
+  <iframe 
+    src="./ranking.html"
+    width="100%" 
+    height="100%" 
+    frameborder="0"
+  ></iframe>
+</div>
+
+<!--
+【现场互动环节】
+现在你已经了解了各种模型的特点，凭直觉给它们排位吧！
+全屏沉浸式天梯，无标题无边框干扰。
+操作方式：
+1. 进入此页后，直接拖动卡片到天梯层级（夯/顶级/人上人/NPC/拉完了）
+2. 记录投票分布
+3. 留下悬念："听完后面几章，你的排序会变吗？"
+
+重点观察：
+- 国产模型 vs 海外模型的认知差距
+- 有没有同学把 DeepSeek/Kimi 放到最高层级
+-->

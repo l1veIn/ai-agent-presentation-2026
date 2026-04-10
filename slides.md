@@ -13,6 +13,8 @@ title: 驾驭 AI 工具链
 favicon: https://cdn.jsdelivr.net/gh/slidevjs/slidev/assets/favicon.png
 ---
 
+<div class="absolute inset-0 bg-black/50 -z-10"></div>
+
 # 驾驭 AI 工具链
 ## 找到属于你的科研工作流
 

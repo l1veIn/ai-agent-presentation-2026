@@ -24,6 +24,9 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm run build -- --base /${{ github.event.repository.name }}/
+      - name: Inject base tag into 404.html for SPA fallback
+        run: |
+          sed -i 's|<head>|<head><script>(function(){var s=window.location.pathname.split("/");if(s.length>=3){var b=document.createElement("base");b.href=s.slice(0,3).join("/")+"/";document.head.insertBefore(b,document.head.firstChild)}})()</script>|' dist/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

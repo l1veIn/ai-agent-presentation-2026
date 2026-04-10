@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>从夯到拉</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+      background: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+      user-select: none;
+    }
+
+    h1 {
+      font-size: 22px;
+      color: #c00;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .table-container {
+      width: 100%;
+      max-width: 800px;
+      border: 2px solid #000;
+    }
+
+    .tier-row {
+      display: flex;
+      min-height: 56px;
+      border-bottom: 1px solid #999;
+    }
+
+    .tier-row:last-child {
+      border-bottom: none;
+    }
+
+    .tier-label {
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #999;
+      flex-shrink: 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .tier-cards {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 8px;
+      align-items: center;
+      min-height: 56px;
+      transition: background 0.15s;
+    }
+
+    .tier-cards.drag-over {
+      background: #ffe !important;
+    }
+
+    /* 夯 - 最高级 - 大红 */
+    .tier-han .tier-label {
+      background: #c00;
+      color: #fff;
+    }
+
+    .tier-han .tier-cards {
+      background: #ffe0e0;
+    }
+
+    /* 顶级 */
+    .tier-top .tier-label {
+      background: #e44;
+      color: #fff;
+    }
+
+    .tier-top .tier-cards {
+      background: #ffe8e8;
+    }
+
+    /* 人上人 */
+    .tier-elite .tier-label {
+      background: #f80;
+      color: #fff;
+    }
+
+    .tier-elite .tier-cards {
+      background: #fff4e0;
+    }
+
+    /* NPC */
+    .tier-npc .tier-label {
+      background: #999;
+      color: #fff;
+    }
+
+    .tier-npc .tier-cards {
+      background: #f5f5f5;
+    }
+
+    /* 拉完了 */
+    .tier-done .tier-label {
+      background: #666;
+      color: #ccc;
+    }
+
+    .tier-done .tier-cards {
+      background: #eee;
+    }
+
+    .card-pool {
+      width: 100%;
+      max-width: 800px;
+      border: 2px solid #000;
+      border-top: none;
+    }
+
+    .pool-header {
+      background: #333;
+      color: #fff;
+      padding: 6px 12px;
+      font-size: 12px;
+      text-align: center;
+      border-bottom: 1px solid #999;
+    }
+
+    .pool-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px;
+      justify-content: center;
+      min-height: 48px;
+      background: #fafafa;
+      transition: background 0.15s;
+    }
+
+    .pool-cards.drag-over {
+      background: #efe !important;
+    }
+
+    .card {
+      padding: 6px 12px;
+      background: #fff;
+      border: 1px solid #999;
+      font-size: 13px;
+      color: #333;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .card:hover {
+      background: #ffe;
+      border-color: #f60;
+    }
+
+    .card.dragging {
+      opacity: 0.4;
+      background: #ddd;
+    }
+
+    .hint {
+      margin-top: 12px;
+      font-size: 11px;
+      color: #999;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>从夯到拉</h1>
+  <div class="subtitle">凭直觉给这些模型排位</div>
+
+  <div class="table-container">
+    <div class="tier-row tier-han">
+      <div class="tier-label">夯</div>
+      <div class="tier-cards" data-tier="1"></div>
+    </div>
+    <div class="tier-row tier-top">
+      <div class="tier-label">顶级</div>
+      <div class="tier-cards" data-tier="2"></div>
+    </div>
+    <div class="tier-row tier-elite">
+      <div class="tier-label">人上人</div>
+      <div class="tier-cards" data-tier="3"></div>
+    </div>
+    <div class="tier-row tier-npc">
+      <div class="tier-label">NPC</div>
+      <div class="tier-cards" data-tier="4"></div>
+    </div>
+    <div class="tier-row tier-done">
+      <div class="tier-label">拉完了</div>
+      <div class="tier-cards" data-tier="5"></div>
+    </div>
+  </div>
+
+  <div class="card-pool">
+    <div class="pool-header">⬇ 模型候选池 ⬇</div>
+    <div class="pool-cards" data-tier="0">
+      <div class="card" draggable="true">ChatGPT</div>
+      <div class="card" draggable="true">Claude</div>
+      <div class="card" draggable="true">Gemini</div>
+      <div class="card" draggable="true">Grok</div>
+      <div class="card" draggable="true">Kimi</div>
+      <div class="card" draggable="true">DeepSeek</div>
+      <div class="card" draggable="true">豆包</div>
+      <div class="card" draggable="true">GLM</div>
+      <div class="card" draggable="true">MiniMax</div>
+      <div class="card" draggable="true">通义千问</div>
+      <div class="card" draggable="true">Mimo</div>
+      <div class="card" draggable="true">文心</div>
+    </div>
+  </div>
+
+  <div class="hint">拖动卡片到上方层级 · 拖回下方可放回候选池</div>
+
+  <script>
+    let draggedCard = null;
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('dragstart', e => {
+        draggedCard = card;
+        card.classList.add('dragging');
+      });
+      card.addEventListener('dragend', e => {
+        draggedCard = null;
+        card.classList.remove('dragging');
+      });
+    });
+
+    document.querySelectorAll('.tier-cards, .pool-cards').forEach(zone => {
+      zone.addEventListener('dragover', e => {
+        e.preventDefault();
+        zone.classList.add('drag-over');
+      });
+      zone.addEventListener('dragleave', e => {
+        zone.classList.remove('drag-over');
+      });
+      zone.addEventListener('drop', e => {
+        e.preventDefault();
+        zone.classList.remove('drag-over');
+        if (draggedCard) {
+          zone.appendChild(draggedCard);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

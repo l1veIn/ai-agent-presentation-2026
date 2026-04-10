@@ -65,7 +65,7 @@ layout: two-cols
 
 ::right::
 
-<div class="h-full flex items-center bg-slate-900 mt-14 p-4 rounded-xl border border-slate-700 shadow-xl overflow-hidden font-mono text-xs">
+<div class="h-4/5 flex items-center bg-slate-900 mt-14 p-4 rounded-xl border border-slate-700 shadow-xl overflow-hidden font-mono text-xs">
 ```markdown
 # Skill: 实验室 CSV 分析规范
 
@@ -83,7 +83,7 @@ layout: two-cols
 <!--
 给大家展示一下怎么把 AI 当"实习生"管。
 Skill 机制解决了复杂编排的确定性问题。
-有一个最新的开源项目，只有一段提示词，严格约束=可复现的开发流程=固定的产物（甚至是一个app）
+有一个最新的开源项目，只有一段提示词，严格约束=可复现的开发流程=固定的产物（甚至是一个app）https://github.com/yetone/voice-input-src/blob/master/README_CN.md  这个项目引起了大家的讨论，一份精准的提示词，用户只要复制就能用自己的 AI 开发一个相同的、不偏移的 app
 -->
 
 ---
@@ -157,6 +157,40 @@ layout: default
 
 <!--
 引出上下文瓶颈，也是为了给后面"任务编排极易崩溃"做科学严谨的铺垫。
+-->
+
+---
+layout: center
+---
+
+# <lucide-play-circle class="inline-block mr-2 mb-1 opacity-70"/>现场实战：CV 数据预处理 Pipeline
+
+<div class="text-left max-w-3xl mx-auto bg-slate-800/30 p-8 rounded border border-slate-700 mt-6">
+  <div class="text-slate-300 font-bold mb-4 flex items-center gap-2"><lucide-list-check class="w-5 h-5"/> 演示场景：批量处理科研图像数据集</div>
+  <ol class="space-y-3 opacity-80 text-sm">
+    <li>1. 原始数据：<code>raw_images/</code> 目录下有 200+ 张混乱命名的实验样本图。</li>
+    <li>2. 加载预设 <b>Skill</b>：CV 预处理规范（统一 resize 到 224x224、标准化、生成 metadata.csv）。</li>
+    <li>3. 输入指令："按 Skill 规范处理整个目录，输出到 processed/，并生成数据分布统计"。</li>
+    <li>4. 观察 Claude Code 进入无人值守模式：读取图片 → 并行处理 → 自动生成可视化报告。</li>
+  </ol>
+  <div class="mt-6 p-3 bg-green-900/20 border border-green-500/30 rounded text-xs">
+    <span class="text-green-400 font-bold">关键对比：</span> 
+    <span class="opacity-80">同样的任务在 Jupyter 里需要写 30+ 行代码 + 手动监控；CLI Agent 只需一句话 + 后台运行。</span>
+  </div>
+</div>
+
+<p class="mt-6 text-sm opacity-50 italic text-center font-mono">
+  Switching to terminal Claude Code environment...
+</p>
+
+<!--
+【现场演示环节】
+1. 展示 Skill 文件的内容（预处理规范）。
+2. 展示 raw_images/ 目录的混乱状态。
+3. 输入一条自然语言指令。
+4. 让 Claude Code 自己写 Python 脚本并执行。
+5. 展示生成的 processed/ 目录和统计图表。
+重点：突出"Skill 约束"和"批量无人值守"这两个 CLI 的核心优势。
 -->
 
 ---
