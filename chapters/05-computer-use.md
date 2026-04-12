@@ -128,6 +128,63 @@ layout: default
 -->
 
 ---
+layout: default
+---
+
+# <lucide-swords class="inline-block mr-2 mb-1 opacity-70"/>从龙虾大战到制度设计：Edict 的三省六部制编排
+
+> 既然大家都在卷 Agent 编排，那架构到底怎么搞？<br/>一个中国开发者给出了最"反硅谷"的答案：<b>用 1300 年前的帝国制度，比现代框架更懂分权制衡。</b>
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+<!-- Left: Architecture Flow -->
+<div class="bg-slate-900/60 p-5 rounded-xl border border-amber-500/20 relative overflow-hidden">
+  <div class="absolute -right-4 -top-4 text-[6rem] opacity-5">🏛️</div>
+  <div class="text-xs text-amber-400 font-bold mb-4 tracking-wider uppercase">Edict · 三省六部制 Task Flow</div>
+  <div class="font-mono text-[11px] space-y-1.5 text-center leading-relaxed relative z-10">
+    <div class="bg-amber-900/30 border border-amber-500/40 rounded py-1.5 px-2 text-amber-200">👤 用户指令</div>
+    <div class="text-slate-500">↓ 分拣</div>
+    <div class="bg-slate-800/80 border border-slate-600 rounded py-1.5 px-2 text-slate-300">🤴 太子 · 意图识别 & 任务分类</div>
+    <div class="text-slate-500">↓</div>
+    <div class="flex gap-2 text-center">
+      <div class="flex-1 bg-blue-900/30 border border-blue-500/40 rounded py-1.5 px-1 text-blue-200">📝 中书省<br/><span class="text-[9px] opacity-70">规划拆解</span></div>
+      <div class="flex-1 bg-red-900/30 border border-red-500/40 rounded py-1.5 px-1 text-red-200">⚖️ 门下省<br/><span class="text-[9px] opacity-70">审核封驳 ✋</span></div>
+      <div class="flex-1 bg-green-900/30 border border-green-500/40 rounded py-1.5 px-1 text-green-200">📋 尚书省<br/><span class="text-[9px] opacity-70">派发追踪</span></div>
+    </div>
+    <div class="text-slate-500">↓ 并行执行</div>
+    <div class="flex gap-1.5 text-center text-[9px]">
+      <div class="flex-1 bg-slate-800/60 border border-slate-700 rounded py-1 px-0.5 text-slate-400">户部<br/>数据</div>
+      <div class="flex-1 bg-slate-800/60 border border-slate-700 rounded py-1 px-0.5 text-slate-400">礼部<br/>文档</div>
+      <div class="flex-1 bg-slate-800/60 border border-slate-700 rounded py-1 px-0.5 text-slate-400">兵部<br/>写码</div>
+      <div class="flex-1 bg-slate-800/60 border border-slate-700 rounded py-1 px-0.5 text-slate-400">刑部<br/>审计</div>
+      <div class="flex-1 bg-slate-800/60 border border-slate-700 rounded py-1 px-0.5 text-slate-400">工部<br/>部署</div>
+    </div>
+  </div>
+  <div class="mt-3 text-[10px] text-slate-500 text-right">12 个 Agent · GitHub 14.9k ⭐ · cft0808/edict</div>
+</div>
+
+<!-- Right: Key Insights -->
+<div class="flex flex-col gap-4">
+  <div class="bg-slate-800/30 p-4 rounded-lg border-l-2 border-amber-500">
+    <div class="font-bold text-amber-300 text-sm mb-1">🧬 核心杀招：门下省封驳</div>
+    <p class="text-xs opacity-80 leading-relaxed">中书省写完方案，门下省可以<strong>打回重做</strong>。规划 ≠ 审核 ≠ 执行，三权分离，天然防幻觉传导。</p>
+  </div>
+  <div class="bg-slate-800/30 p-4 rounded-lg border-l-2 border-slate-500">
+    <div class="font-bold text-slate-300 text-sm mb-1">🔄 vs AutoGen / CrewAI</div>
+    <p class="text-xs opacity-80 leading-relaxed">AutoGen 是"群聊模式"——Agent 自由讨论，容易跑题死循环。CrewAI 有角色但缺审核。Edict 强制单向流转 + 制度化卡控。</p>
+  </div>
+  <div class="bg-slate-800/30 p-4 rounded-lg border-l-2 border-green-500">
+    <div class="font-bold text-green-300 text-sm mb-1">💡 启示：历史即架构</div>
+    <p class="text-xs opacity-80 leading-relaxed">三省六部制运行了 1300 年，原因不是"聪明"，而是<strong>结构性解决了信息在多层级传递中的衰减与失控</strong>。多 Agent 编排的底层问题，古人早就解过。</p>
+  </div>
+</div>
+</div>
+
+<!--
+递进逻辑：龙虾大战讲"谁在做"，这页讲"怎么做架构"。
+核心卖点：制度设计 > 自由编排。门下省封驳 = 制度化的 Human in the Loop。
+-->
+
+---
 layout: center
 ---
 
