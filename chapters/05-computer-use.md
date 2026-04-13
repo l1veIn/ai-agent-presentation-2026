@@ -77,7 +77,8 @@ layout: two-cols
 
 <!--
 在这里介绍 OpenClaw。
-给大学研究生介绍这玩意儿最能吸引眼球。
+这类 agent 跟 claudecode、codex 这种对比，在多个维度增加了能力。
+例如，一般来说都会增加跨会话记忆能力，也有叫长短期记忆的，技术实现路径多样。另外就是系统级工具调用能力，当然也有基于 docker 或者沙箱技术限制下的系统级工具调用能力。
 -->
 
 ---
@@ -135,7 +136,7 @@ layout: default
 
 > 既然大家都在卷 Agent 编排，那架构到底怎么搞？<br/>一个中国开发者给出了最"反硅谷"的答案：<b>用 1300 年前的帝国制度，比现代框架更懂分权制衡。</b>
 
-<div class="grid grid-cols-2 gap-8 mt-6">
+<div class="grid grid-cols-2 gap-8 mt-2">
 <!-- Left: Architecture Flow -->
 <div class="bg-slate-900/60 p-5 rounded-xl border border-amber-500/20 relative overflow-hidden">
   <div class="absolute -right-4 -top-4 text-[6rem] opacity-5">🏛️</div>
@@ -161,10 +162,9 @@ layout: default
   </div>
   <div class="mt-3 text-[10px] text-slate-500 text-right">12 个 Agent · GitHub 14.9k ⭐ · cft0808/edict</div>
 </div>
-
 <!-- Right: Key Insights -->
 <div class="flex flex-col gap-4">
-  <div class="bg-slate-800/30 p-4 rounded-lg border-l-2 border-amber-500">
+  <div class="bg-slate-800/30 p-2 rounded-lg border-l-2 border-amber-500">
     <div class="font-bold text-amber-300 text-sm mb-1">🧬 核心杀招：门下省封驳</div>
     <p class="text-xs opacity-80 leading-relaxed">中书省写完方案，门下省可以<strong>打回重做</strong>。规划 ≠ 审核 ≠ 执行，三权分离，天然防幻觉传导。</p>
   </div>
@@ -174,7 +174,7 @@ layout: default
   </div>
   <div class="bg-slate-800/30 p-4 rounded-lg border-l-2 border-green-500">
     <div class="font-bold text-green-300 text-sm mb-1">💡 启示：历史即架构</div>
-    <p class="text-xs opacity-80 leading-relaxed">三省六部制运行了 1300 年，原因不是"聪明"，而是<strong>结构性解决了信息在多层级传递中的衰减与失控</strong>。多 Agent 编排的底层问题，古人早就解过。</p>
+    <p class="text-xs opacity-80 leading-relaxed">三省六部制运行了 1300 年，原因不是"聪明"，而是<strong>结构性解决了信息在多层级传递中的衰减与失控</strong></p>
   </div>
 </div>
 </div>
@@ -182,16 +182,20 @@ layout: default
 <!--
 递进逻辑：龙虾大战讲"谁在做"，这页讲"怎么做架构"。
 核心卖点：制度设计 > 自由编排。门下省封驳 = 制度化的 Human in the Loop。
+
+实际上古代这套制度也会随着上下文过长而糜烂。
+
+这里说明了工具熵的复杂性，维度很高，如果你想设计完美的工作流或者工具链，在懂 AI 的基础上，还需要更高级的管理知识甚至哲学思考能力。
 -->
 
 ---
 layout: center
 ---
 
-# <lucide-play-circle class="inline-block mr-2 mb-1 opacity-70"/>现场实战：Synnia，作为我的 PC 级 Agent
+# <lucide-play-circle class="inline-block mr-2 mb-1 opacity-70"/>现场实战：Hermes，作为 PC 级 Agent
 
 <div class="text-left max-w-3xl mx-auto bg-slate-800/30 p-8 rounded border border-slate-700 mt-6">
-  <div class="text-slate-300 font-bold mb-4 flex items-center gap-2"><lucide-list-check class="w-5 h-5"/> 演示场景：让 Synnia 现场完成一个真实任务</div>
+  <div class="text-slate-300 font-bold mb-4 flex items-center gap-2"><lucide-list-check class="w-5 h-5"/> 演示场景：让 Hermes 现场完成一个真实任务</div>
   
   <div class="grid grid-cols-2 gap-4 mb-6">
     <div class="bg-slate-900/50 p-4 rounded border border-slate-600">
@@ -215,8 +219,8 @@ layout: center
   </div>
 
   <div class="bg-blue-900/10 border border-blue-500/30 p-4 rounded">
-    <div class="text-blue-300 font-bold text-sm mb-2">现场任务（由 Jack 指定）</div>
-    <p class="text-sm opacity-80">Synnia 将在这个拥有完整系统权限的环境中，与 Jack 配合完成一个实时任务——展示"人+Agent"协作的真实边界。</p>
+    <div class="text-blue-300 font-bold text-sm mb-2">现场任务（由用户指定）</div>
+    <p class="text-sm opacity-80">Hermes 将在这个拥有完整系统权限的环境中，与用户配合完成一个实时任务——展示"人+Agent"协作的真实边界。</p>
   </div>
 </div>
 
@@ -225,15 +229,15 @@ layout: center
 </p>
 
 <!--
-【现场互动演示环节 - 与 Synnia 配合】
-这是一个开放式的现场演示，由 Jack 临场给 Synnia 指派任务。
+【现场互动演示环节 - 与 Hermes 配合】
+这是一个开放式的现场演示，临场给 Hermes 指派任务。
 
 演示目标：
 1. 展示 PC 级 Agent 的真实能力边界（不是什么都能做）
 2. 展示人机协作的"断点控制"（Human in the Loop）
 3. 让观众看到 Agent 在真实权限下的行为模式
 
-可能的任务方向（Jack 可临场选择）：
+可能的任务方向（可临场选择）：
 - 文件/代码相关：读取某个项目 → 分析 → 修改 → 提交 PR
 - 数据处理：找到桌面的某类文件 → 批量处理 → 生成报告
 - 系统操作：检查系统状态 → 安装工具 → 运行测试
@@ -247,7 +251,7 @@ layout: center
 - 错误发生时的自纠错能力
 
 这是一个真实的协作演示，不是预设剧本。
-Synnia 会在这个过程中实时响应 Jack 的指令。
+Hermes 会在这个过程中实时响应用户的指令。
 -->
 
 ---
